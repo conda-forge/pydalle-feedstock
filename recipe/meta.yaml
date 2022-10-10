@@ -1,5 +1,5 @@
 {% set name = "pydalle" %}
-{% set version = "0.1.2" %}
+{% set version = "0.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pydalle-{{ version }}.tar.gz
-  sha256: b4f42f4da898886e3e63608bd126dc2809471140a935aa24c12bbbf64d532d59
+  sha256: ef63a0ada8e9d44d8cdecefaee7efd89902ad92802e708fdcc838733de3b4d63
 
 build:
   noarch: python
