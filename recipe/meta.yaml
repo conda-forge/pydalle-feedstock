@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pydalle-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pydalle-{{ version }}.tar.gz
   sha256: ef63a0ada8e9d44d8cdecefaee7efd89902ad92802e708fdcc838733de3b4d63
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools >=61.0
   run:
-    - python >=3.8
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -43,6 +43,7 @@ test:
     - pillow
     - pip
     - requests
+    - python {{ python_min }}
 
 about:
   home: https://github.com/nottheswimmer/dalle
